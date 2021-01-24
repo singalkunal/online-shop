@@ -1,28 +1,39 @@
 const Product = require('../models/product');
 const Cart = require('../models/cart');
 
+const db = require('../utils/database');
+
 // response is built inside callback as fetchAll uses async function (readFile)
 // So we have products array ready only after the readFile is complete
 exports.getProducts = (req, res, next) => {
-    Product.fetchAll((products) => {
-            res.render('shop/products-list', {
-            prods: products,
-            pageTitle: 'All Products',
-            path: '/products',
-        });
+    Product.fetchAll()
+    .then(([rows, fieldData]) => {
+        res.render('shop/products-list', {
+        prods: rows,
+        pageTitle: 'All Products',
+        path: '/products',
     });
+    })
+    .catch(err => {
+        console.log("Error: ", err);
+    })
     
 };
 
 exports.getProductDetails = (req, res) => {
     const prodId = req.params.productId;
-    Product.getById(prodId, (product) => {
+    Product.getById(prodId)
+    .then(([rows, fieldData]) => {
+        const product = rows[0];
         res.render('shop/product-details', {
             pageTitle: product.title,
             product,
             path: '/products'
         });
-    });
+    })
+    .catch(err => {
+        console.log("Error: ", err);
+    })
 
     
 };

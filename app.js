@@ -20,13 +20,6 @@ app = express();
 //     extname: 'hbs'
 // }));
 
-db.execute('Select * from products')
-.then(data => {
-    console.log(data[0], data[1]);
-})
-.catch(err => {
-    console.log("Error: ", err);
-})
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
