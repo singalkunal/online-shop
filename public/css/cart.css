@@ -1,0 +1,44 @@
+main ul {
+    list-style-type: none;
+    max-width: 60%;
+    margin: auto;
+
+}
+
+form {
+    display: block;
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+.cart-item{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+
+}
+
+.cart-item__title{
+    flex: 1;
+    margin: auto;
+}
+
+.cart-item__quantity {
+    flex: 1;
+    margin: auto;
+}
+
+.cart-item__form {
+    flex: 1;
+    margin: auto;
+}
+
+.cart-item__btn {
+    border: 1px solid #d10542;
+    color: #d10542;
+}
+
+.cart-item__btn:hover {
+    background-color: #d10542;
+    color: white;
+
+}

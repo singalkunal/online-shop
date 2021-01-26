@@ -1,0 +1,33 @@
+main ul {
+    list-style-type: none;
+    max-width: 60%;
+    margin: auto;
+
+}
+
+.order-item{
+    margin: 1.5rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.order_id {
+    width: 100%;
+    margin: 0;
+}
+
+.order-item-product{
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
+    display: flex;
+
+}
+
+.order-item-product__title{
+    flex: 1;
+    margin: auto;
+}
+
+.order-item-product__quantity {
+    flex: 1;
+    margin: auto;
+}

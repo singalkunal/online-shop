@@ -1,11 +1,31 @@
 <%- include('../includes/head.ejs')  %>
 <link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/order.css">
 </head>
 
 <body> 
     <%- include('../includes/navigation.ejs')  %>
-    <main>
-        <h1>My Orders!</h1>
+    <main class="centred">
+        <% if (orders.length > 0) { %>
+            <ul class="order-items__list">
+                <% orders.forEach(order => { %>
+                    <li class="order-item">
+                        <h2 class="order_id">Order# <%= order.id %></h2>
+                        <hr>
+                        <ul class="order-item-products__list">
+                            <% order.products.forEach(product => { %>
+                                <li class="order-item-product">
+                                    <h4 class="order-item-product__title"><%= product.title %></h4>
+                                    <h4 class="order-item-product__quantity"> Quantity: <%= product.orderItem.quantity %></h4>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <h1>My Orders!</h1>
+        <% } %>
     </main>
 
 <%- include('../includes/end.ejs') %>

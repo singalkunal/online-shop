@@ -1,5 +1,5 @@
 {
-  "name": "express-tut",
+  "name": "online-shop",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "mysql2": "^2.2.5",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "sequelize": "^6.4.0"
   },
   "devDependencies": {},
   "keywords": [],
