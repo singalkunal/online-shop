@@ -63,6 +63,7 @@ Order.belongsTo(User);
 Order.belongsToMany(Product, { through: OrderItem });
 Product.belongsToMany(Order, { through: OrderItem });
 
+const PORT = process.env.PORT || 3000;
 sequelize
 // .sync({ force: true})
 .sync()
@@ -94,7 +95,9 @@ sequelize
 })
 .then(cart => {
     // console.log(user);
-    app.listen(3000);
+    app.listen(PORT, () => {
+        console.log(`App listening on ::${PORT}`);
+    });
 })
 .catch(err => {
     console.log(err);
